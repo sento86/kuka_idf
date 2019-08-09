@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<robot name="cell" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <!-- World frame (for Gazebo) -->
+  <link name="cell/world"/>
+
+  <!-- Cell fixed to world frame  -->
+  <joint name="base_joint" type="fixed">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <parent link="cell/world" />
+      <child link="cell_base"/>
+  </joint>
+
+  <link name="cell_base">
+      <inertial>
+          <mass value="500" />
+          <origin xyz="0 0 0" rpy="0 0 0" />
+          <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1" />
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh filename="package://kuka_control/models/cell/meshes/AgilusStructure.dae"/>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh filename="package://kuka_control/models/cell/meshes/AgilusStructure.dae"/>
+        </geometry>
+      </collision>
+  </link>
+
+  <!-- Cell fixed to world frame  -->
+  <joint name="link_joint" type="fixed">
+      <!--<origin xyz="0.005 -0.005 0.648" rpy="${1.05*3.1416/180} ${0.5*3.1416/180} ${0.0*3.1416/180}" />-->
+      <origin xyz="0.0 0.0 0.64" rpy="0 0 0" />
+      <parent link="cell_base" />
+      <child link="cell_link"/>
+  </joint>
+
+  <link name="cell_link"/>
+
+  <gazebo>
+    <static>true</static>
+  </gazebo>
+
+</robot>

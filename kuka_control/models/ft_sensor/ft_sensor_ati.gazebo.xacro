@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <xacro:macro name="ft_sensor_gazebo" params="parent name type">
+
+    <gazebo reference="${name}_ft_base">
+	<gravity>true</gravity>
+    </gazebo>
+
+    <gazebo reference="${name}_ft_measure">
+	<gravity>true</gravity>
+    </gazebo>
+
+    <gazebo reference="${name}_measure_joint">
+      <provideFeedback>true</provideFeedback>
+    </gazebo>
+
+    <!-- The ft_sensor plugin -->
+    <gazebo>
+      <plugin name="${name}_ft_sensor" filename="libgazebo_ros_ft_sensor.so">
+        <updateRate>100.0</updateRate>
+        <topicName>${name}/ft_sensor_topic</topicName> 
+        <jointName>${name}_measure_joint</jointName>
+        <gaussianNoise>0.001</gaussianNoise>
+      </plugin>
+	</gazebo>
+
+    </xacro:macro>
+
+</robot>

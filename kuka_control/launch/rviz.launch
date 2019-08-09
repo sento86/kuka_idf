@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<launch>
+
+  <arg name="gazebo" default="false" />
+
+  <!-- Rviz to vizualize robot -->
+  <node name="rviz" pkg="rviz" type="rviz" output="screen" args="-d '$(find kuka_control)/launch/rviz/gazebo.rviz'" if="$(arg gazebo)" />
+  <node name="rviz" pkg="rviz" type="rviz" output="screen" args="-d '$(find kuka_control)/launch/rviz/kuka.rviz'" unless="$(arg gazebo)" />
+
+</launch>

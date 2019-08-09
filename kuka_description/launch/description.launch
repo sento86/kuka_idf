@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<launch>
+
+  <arg name="gazebo" default="false" />
+
+  <!-- Generate/Load robot description file -->
+  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find kuka_description)/urdf/kr6r900sixx.urdf.xacro' gazebo:=$(arg gazebo)" />
+
+</launch>

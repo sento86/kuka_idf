@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<robot name="kuka_kr6r900sixx" xmlns:xacro="http://wiki.ros.org/xacro">
+
+  <!-- Gazebo Tags -->
+  <xacro:arg name="gazebo" default="false"/>
+  <xacro:if value="$(arg gazebo)">
+    <xacro:include filename="$(find kuka_description)/urdf/kr6r900sixx.gazebo.xacro" />
+  </xacro:if>
+
+  <!-- Include Kuka KR6 model -->
+  <xacro:include filename="$(find kuka_description)/urdf/kr6r900sixx.xacro" />
+  
+  <!-- Include FT-sensor and tool -->
+  <xacro:if value="$(arg gazebo)">
+  <xacro:include filename="$(find kuka_control)/models/ft_tool.xacro" />
+  </xacro:if>
+  <xacro:unless value="$(arg gazebo)">
+  <xacro:include filename="$(find kuka_control)/models/ft_tool_real.xacro" />
+  </xacro:unless>
+
+</robot>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="brida" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:arg name="gazebo" default="false"/>
+
+  <!-- Brida -->
+  <xacro:include filename="$(find kuka_control)/models/brida/brida.xacro" />
+
+  <xacro:brida name="brida" parent="tool0">
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+  </xacro:brida>
+
+</robot>
