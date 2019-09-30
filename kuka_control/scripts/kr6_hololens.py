@@ -176,7 +176,7 @@ class KR6control:
         self.pubTrajectory_ = rospy.Publisher("/position_trajectory_controller/command", JointTrajectory, queue_size=1)
         self.pubTrajectory = rospy.Publisher(self.ns + "/position_trajectory_controller/command", JointTrajectory, queue_size=1)
 
-        self.pub_coords = rospy.Publisher('/point', Point, queue_size=1)
+        self.pub_coords = rospy.Publisher('/input_coords', Point, queue_size=1)
         self.pub_tool = rospy.Publisher('/tool', PoseStamped, queue_size=1)
         self.pub_robot = rospy.Publisher('/base_robot', PoseStamped, queue_size=1)
         self.pub_object = rospy.Publisher('/object', PoseStamped, queue_size=1)
@@ -258,7 +258,13 @@ class KR6control:
             
     def callback_ft_sensor(self, data):
         self.ft_sensor = data
-        
+        if self.ft_sensor.wrench.force.z<0:
+            Fz=abs(self.ft_sensor.wrench.force.z)/10.0
+            if Fz>1:
+                Fz=1
+        else:
+            Fz=0
+        self.ft_sensor.wrench.force.z=Fz
         self.ft_twist.linear = self.ft_sensor.wrench.force
         self.ft_twist.angular = self.ft_sensor.wrench.torque
         
@@ -350,7 +356,7 @@ class KR6control:
         self.tool_pose.header = self.object_pose.header
             
         self.pub_robot.publish(self.robot_pose)  # Robot's base pose
-        self.pub_object.publish(self.object_pose)  # Object's pose
+        #self.pub_object.publish(self.object_pose)  # Object's pose
         self.pub_tool.publish(self.tool_pose)  # Tool's pose
 
     def loop(self, fc=100.0):
