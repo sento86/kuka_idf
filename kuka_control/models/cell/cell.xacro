@@ -39,6 +39,15 @@
 
   <link name="cell_link"/>
 
+  <joint name="link_joint_cam" type="fixed">
+      <!--<origin xyz="0.005 -0.005 0.648" rpy="${1.05*3.1416/180} ${0.5*3.1416/180} ${0.0*3.1416/180}" />-->
+      <origin xyz="0.0 0.0 0.0" rpy="${1.05*3.1416/180} 0 0" />
+      <parent link="cell_link" />
+      <child link="cell_cam"/>
+  </joint>
+
+  <link name="cell_cam"/>
+
   <gazebo>
     <static>true</static>
   </gazebo>

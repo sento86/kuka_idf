@@ -6,8 +6,10 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
-        - /TF1/Tree1
+        - /TF1
+        - /TF1/Frames1
         - /CellModel1/Links1
+        - /Marker1
       Splitter Ratio: 0.569444418
     Tree Height: 768
   - Class: rviz/Selection
@@ -28,7 +30,7 @@ Panels:
     Experimental: false
     Name: Time
     SyncMode: 0
-    SyncSource: ""
+    SyncSource: Image2
 Toolbars:
   toolButtonStyle: 2
 Visualization Manager:
@@ -87,199 +89,134 @@ Visualization Manager:
     - Alpha: 0.5
       Class: rviz/RobotModel
       Collision Enabled: false
-      Enabled: true
+      Enabled: false
       Links:
         All Links Enabled: true
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        axia80_ft_base:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        axia80_ft_measure:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        base:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        base_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        brida_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        camera_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        link_1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        link_2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        link_3:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        link_4:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        link_5:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        link_6:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        tool0:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        tool_axis:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        tool_base:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        tool_tip:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
       Name: KR6Model
       Robot Description: robot_description
       TF Prefix: ""
       Update Interval: 0
-      Value: true
+      Value: false
       Visual Enabled: true
     - Class: rviz/TF
       Enabled: true
       Frame Timeout: 15
       Frames:
-        All Enabled: true
+        All Enabled: false
         axia80_ft_base:
-          Value: true
+          Value: false
         axia80_ft_measure:
-          Value: true
+          Value: false
         base:
-          Value: true
+          Value: false
         base_link:
-          Value: true
+          Value: false
         brida_link:
           Value: true
         camera1_depth_frame:
-          Value: true
+          Value: false
         camera1_depth_optical_frame:
-          Value: true
+          Value: false
         camera1_link:
-          Value: true
+          Value: false
         camera1_rgb_frame:
-          Value: true
+          Value: false
         camera1_rgb_optical_frame:
-          Value: true
+          Value: false
         camera2_depth_frame:
-          Value: true
+          Value: false
         camera2_depth_optical_frame:
-          Value: true
+          Value: false
         camera2_link:
-          Value: true
+          Value: false
         camera2_rgb_frame:
-          Value: true
+          Value: false
         camera2_rgb_optical_frame:
-          Value: true
+          Value: false
         camera3_depth_frame:
-          Value: true
+          Value: false
         camera3_depth_optical_frame:
-          Value: true
+          Value: false
         camera3_link:
-          Value: true
+          Value: false
         camera3_rgb_frame:
-          Value: true
+          Value: false
         camera3_rgb_optical_frame:
-          Value: true
+          Value: false
+        camera_color_frame:
+          Value: false
+        camera_color_optical_frame:
+          Value: false
+        camera_depth_frame:
+          Value: false
+        camera_depth_optical_frame:
+          Value: false
         camera_link:
           Value: true
         cell/world:
-          Value: true
+          Value: false
+        cell_base:
+          Value: false
+        cell_cam:
+          Value: false
         cell_link:
-          Value: true
+          Value: false
         link_1:
-          Value: true
+          Value: false
         link_2:
-          Value: true
+          Value: false
         link_3:
-          Value: true
+          Value: false
         link_4:
-          Value: true
+          Value: false
         link_5:
-          Value: true
+          Value: false
         link_6:
-          Value: true
+          Value: false
         mf1_base:
-          Value: true
+          Value: false
         mf1_frame:
-          Value: true
+          Value: false
         mf1_link1:
-          Value: true
+          Value: false
         mf1_link2:
-          Value: true
+          Value: false
         mf1_link3:
-          Value: true
+          Value: false
         mf2_base:
-          Value: true
+          Value: false
         mf2_frame:
-          Value: true
+          Value: false
         mf2_link1:
-          Value: true
+          Value: false
         mf2_link2:
-          Value: true
+          Value: false
         mf2_link3:
-          Value: true
+          Value: false
         mf3_base:
-          Value: true
+          Value: false
         mf3_frame:
-          Value: true
+          Value: false
         mf3_link1:
-          Value: true
+          Value: false
         mf3_link2:
-          Value: true
+          Value: false
         mf3_link3:
-          Value: true
+          Value: false
         tool0:
-          Value: true
+          Value: false
         tool_axis:
-          Value: true
+          Value: false
         tool_base:
-          Value: true
+          Value: false
         tool_tip:
-          Value: true
+          Value: false
         world:
-          Value: true
+          Value: false
       Marker Scale: 0.25
       Name: TF
       Show Arrows: true
@@ -305,45 +242,52 @@ Visualization Manager:
                                     tool_tip:
                                       {}
                             camera_link:
-                              {}
+                              camera_color_frame:
+                                camera_color_optical_frame:
+                                  {}
+                              camera_depth_frame:
+                                camera_depth_optical_frame:
+                                  {}
           cell/world:
-            cell_link:
-              mf1_base:
-                mf1_link1:
-                  mf1_link2:
-                    mf1_link3:
-                      mf1_frame:
-                        camera1_link:
-                          camera1_depth_frame:
-                            camera1_depth_optical_frame:
-                              {}
-                          camera1_rgb_frame:
-                            camera1_rgb_optical_frame:
-                              {}
-              mf2_base:
-                mf2_link1:
-                  mf2_link2:
-                    mf2_link3:
-                      mf2_frame:
-                        camera2_link:
-                          camera2_depth_frame:
-                            camera2_depth_optical_frame:
-                              {}
-                          camera2_rgb_frame:
-                            camera2_rgb_optical_frame:
-                              {}
-              mf3_base:
-                mf3_link1:
-                  mf3_link2:
-                    mf3_link3:
-                      mf3_frame:
-                        camera3_link:
-                          camera3_depth_frame:
-                            camera3_depth_optical_frame:
-                              {}
-                          camera3_rgb_frame:
-                            camera3_rgb_optical_frame:
-                              {}
+            cell_base:
+              cell_link:
+                cell_cam:
+                  mf1_base:
+                    mf1_link1:
+                      mf1_link2:
+                        mf1_link3:
+                          mf1_frame:
+                            camera1_link:
+                              camera1_depth_frame:
+                                camera1_depth_optical_frame:
+                                  {}
+                              camera1_rgb_frame:
+                                camera1_rgb_optical_frame:
+                                  {}
+                  mf2_base:
+                    mf2_link1:
+                      mf2_link2:
+                        mf2_link3:
+                          mf2_frame:
+                            camera2_link:
+                              camera2_depth_frame:
+                                camera2_depth_optical_frame:
+                                  {}
+                              camera2_rgb_frame:
+                                camera2_rgb_optical_frame:
+                                  {}
+                  mf3_base:
+                    mf3_link1:
+                      mf3_link2:
+                        mf3_link3:
+                          mf3_frame:
+                            camera3_link:
+                              camera3_depth_frame:
+                                camera3_depth_optical_frame:
+                                  {}
+                              camera3_rgb_frame:
+                                camera3_rgb_optical_frame:
+                                  {}
       Update Interval: 0
       Value: true
     - Acceleration_Scaling_Factor: 1
@@ -506,11 +450,19 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        cell_link:
+        cell_base:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
+        cell_cam:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        cell_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
         mf1_base:
           Alpha: 1
           Show Axes: false
@@ -922,6 +874,22 @@ Visualization Manager:
       Use Fixed Frame: true
       Use rainbow: true
       Value: true
+    - Class: rviz/Marker
+      Enabled: true
+      Marker Topic: /normal_arrow
+      Name: Marker
+      Namespaces:
+        {}
+      Queue Size: 100
+      Value: true
+    - Class: rviz/Marker
+      Enabled: true
+      Marker Topic: /normal_arrow2
+      Name: Marker
+      Namespaces:
+        {}
+      Queue Size: 100
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -947,25 +915,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 3.2628336
+      Distance: 0.627205253
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.00894733611
-        Y: -0.0577454679
-        Z: 1.31752408
+        X: 0.189422965
+        Y: -0.414628983
+        Z: 0.986821949
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.0500000007
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 1.56979632
+      Pitch: 0.824798942
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 3.14726424
+      Yaw: 5.69046736
     Saved: ~
 Window Geometry:
   Displays:
