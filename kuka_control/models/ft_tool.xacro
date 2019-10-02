@@ -33,7 +33,8 @@
   <xacro:include filename="$(find kuka_control)/models/realsense/realsense_d435.xacro" />
 
   <xacro:realsense parent="brida_link" name="camera">
-      <origin xyz="0.0739 -0.0306 0.01" rpy="0 ${-M_PI/2} ${M_PI-M_PI/8}" />
+   <!--   <origin xyz="0.0739 -0.0306 0.01" rpy="0 ${-M_PI/2} ${M_PI-M_PI/8}" />-->
+	<origin xyz="0.13 0.05 0.025" rpy="${-2.0*M_PI/180} ${-M_PI/2+30.0*M_PI/180} ${M_PI+M_PI/8-5.0*M_PI/180}" />
   </xacro:realsense>
 
 
