@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://ros.org/wiki/xacro" name="ft_sensor_ati">
+<robot name="ft_sensor_ati" xmlns:xacro="http://ros.org/wiki/xacro">
 
     <!-- Include all available models -->
     <xacro:include filename="$(find kuka_control)/models/ft_sensor/models.urdf.xacro"/>

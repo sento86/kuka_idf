@@ -11,11 +11,11 @@
   <xacro:include filename="$(find kuka_description)/urdf/kr6r900sixx.xacro" />
   
   <!-- Include FT-sensor and tool -->
-  <xacro:if value="$(arg gazebo)">
+  <!--<xacro:if value="$(arg gazebo)">
   <xacro:include filename="$(find kuka_control)/models/ft_tool.xacro" />
   </xacro:if>
   <xacro:unless value="$(arg gazebo)">
   <xacro:include filename="$(find kuka_control)/models/ft_tool_real.xacro" />
-  </xacro:unless>
+  </xacro:unless>-->
 
 </robot>

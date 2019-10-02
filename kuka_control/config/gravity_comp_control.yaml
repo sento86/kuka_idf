@@ -1,0 +1,33 @@
+#kr6:
+
+  #Publish all joint states
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  # Joint trajectory controller
+  gravity_comp_controller:
+    type: kuka_control/GravityCompController
+    joints:
+      - joint_a1
+      - joint_a2
+      - joint_a3
+      - joint_a4
+      - joint_a5
+      - joint_a6
+    gains:
+      joint_a1:
+        pid: {p: 200.0, i: 10.0, d: 10.0, i_clamp: 50.0, antiwindup: true}
+      joint_a2: 
+        pid: {p: 100.0, i: 5.0, d: 20.0, i_clamp: 50.0, antiwindup: true}
+      joint_a3:
+        pid: {p: 200.0, i: 10.0, d: 0.0, i_clamp: 50.0, antiwindup: true}
+      joint_a4: 
+        pid: {p: 200.0, i: 10.0, d: 0.0, i_clamp: 50.0, antiwindup: true}
+      joint_a5: 
+        pid: {p: 200.0, i: 10.0, d: 5.0, i_clamp: 50.0, antiwindup: true}
+      joint_a6: 
+        pid: {p: 200.0, i: 5.0, d: 5.0, i_clamp: 50.0, antiwindup: true}
+    root_link: world
+    tip_link: tool0
+

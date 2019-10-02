@@ -156,9 +156,9 @@
       <gazebo reference="${name}_tip">
         <!--<turnGravityOff>false</turnGravityOff>
         <selfCollide>false</selfCollide>-->
-        <!--<mu1 value="0.1" />
-        <mu2 value="0.1" />-->
-        <mu value="0.1" />
+        <mu1 value="0.1" />
+        <mu2 value="0.1" />
+        <!--<mu value="0.1" />-->
         <kp  value="100000" />
         <kd  value="0.01" />
         <material>aluminum</material>

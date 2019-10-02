@@ -6,4 +6,10 @@
     </description>
   </class>
 
+  <class name="kuka_control/GravityCompController" type="kuka_control::GravityCompController" base_class_type="controller_interface::ControllerBase">
+    <description>
+	    Gravity Compensation Controller
+    </description>
+  </class>
+
 </library>

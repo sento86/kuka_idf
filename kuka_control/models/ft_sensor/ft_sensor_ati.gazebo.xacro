@@ -23,7 +23,7 @@
         <jointName>${name}_measure_joint</jointName>
         <gaussianNoise>0.001</gaussianNoise>
       </plugin>
-	</gazebo>
+    </gazebo>
 
     </xacro:macro>
 

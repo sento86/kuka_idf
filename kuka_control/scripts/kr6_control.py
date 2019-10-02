@@ -23,7 +23,7 @@ from sensor_msgs.msg import (
     Joy,
     JointState
 )
-from pyquaternion import Quaternion
+#from pyquaternion import Quaternion
 
 from pid import PID
 #from meld.misc import position_menu_under_widget

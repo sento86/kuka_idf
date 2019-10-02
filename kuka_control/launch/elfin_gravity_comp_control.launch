@@ -1,0 +1,5 @@
+<launch>
+  <include file="$(find kuka_control)/launch/elfin3_empty_world.launch" />
+
+  <include file="$(find kuka_control)/launch/gravity_comp_control.launch" />
+</launch>

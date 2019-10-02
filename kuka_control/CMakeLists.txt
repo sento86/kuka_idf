@@ -17,7 +17,15 @@ find_package(catkin REQUIRED COMPONENTS
   hardware_interface
   controller_interface
   joint_trajectory_controller
-  gazebo_ros)
+  gazebo_ros
+  angles
+  #controller_interface
+  control_msgs
+  urdf
+  #kdl_parser
+  #realtime_tools
+  #dynamic_reconfigure
+)
 
 ## System dependencies are found with CMake's conventions
 find_package(Boost REQUIRED COMPONENTS system)
@@ -57,6 +65,7 @@ find_package(orocos_kdl)
 add_message_files(
   FILES
   Efforts.msg
+  ControllerJointState.msg
 )
 
 ## Generate services in the 'srv' folder
@@ -111,7 +120,16 @@ generate_messages(
 catkin_package(
   # INCLUDE_DIRS include
   # LIBRARIES ${PROJECT_NAME}
-  CATKIN_DEPENDS message_runtime gazebo_ros
+  CATKIN_DEPENDS 
+    message_runtime
+    gazebo_ros
+    angles
+    controller_interface
+    control_msgs
+    urdf
+    kdl_parser
+    realtime_tools
+    #dynamic_reconfigure
   # DEPENDS system_lib
 )
 
@@ -122,11 +140,13 @@ catkin_package(
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 include_directories(include
-  ${catkin_INCLUDE_DIRS})
+  ${catkin_INCLUDE_DIRS}
+  ${Boost_INCLUDE_DIR})
 
 ## Declare a C++ library
 add_library(${PROJECT_NAME}
-  src/joint_trajectory_controller.cpp)
+  src/joint_trajectory_controller.cpp
+  src/gravity_comp_controller.cpp)
 #  src/joint_position_controller.cpp
 #  src/joint_trajectory_controller.cpp)
 

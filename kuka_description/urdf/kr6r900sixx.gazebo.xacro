@@ -45,9 +45,10 @@
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="joint_a1">
       <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <!--<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>-->
     </joint>
     <actuator name="motor1">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <!--<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>-->
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -56,9 +57,10 @@
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="joint_a2">
       <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <!--<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>-->
     </joint>
     <actuator name="motor2">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <!--<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>-->
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -67,9 +69,10 @@
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="joint_a3">
       <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <!--<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>-->
     </joint>
     <actuator name="motor3">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <!--<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>-->
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -78,9 +81,10 @@
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="joint_a4">
       <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <!--<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>-->
     </joint>
     <actuator name="motor4">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <!--<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>-->
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -89,9 +93,10 @@
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="joint_a5">
       <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <!--<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>-->
     </joint>
     <actuator name="motor5">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <!--<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>-->
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -100,11 +105,42 @@
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="joint_a6">
       <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <!--<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>-->
     </joint>
     <actuator name="motor6">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <!--<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>-->
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
+
+  <!-- Gazebo-specific link properties -->
+  <!--<gazebo reference="base_link">
+    <material>Gazebo/Orange</material>
+    <turnGravityOff>true</turnGravityOff>
+  </gazebo>
+  <gazebo reference="link_1">
+    <material>Gazebo/Orange</material>
+    <turnGravityOff>true</turnGravityOff>
+  </gazebo>
+  <gazebo reference="link_2">
+    <material>Gazebo/Orange</material>
+    <turnGravityOff>true</turnGravityOff>
+  </gazebo>  
+  <gazebo reference="link_3">
+    <material>Gazebo/Orange</material>
+    <turnGravityOff>true</turnGravityOff>
+  </gazebo>
+  <gazebo reference="link_4">
+    <material>Gazebo/Orange</material>
+    <turnGravityOff>true</turnGravityOff>
+  </gazebo>
+  <gazebo reference="link_5">
+    <material>Gazebo/Orange</material>
+    <turnGravityOff>true</turnGravityOff>
+  </gazebo>
+  <gazebo reference="link_6">
+    <material>Gazebo/Black</material>
+    <turnGravityOff>true</turnGravityOff>
+  </gazebo>-->
 
 </robot>

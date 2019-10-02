@@ -31,8 +31,8 @@
   <xacro:property name="diameter6" value="0.033" />
 
   <xacro:property name="max_effort" value="1200" />
-  <xacro:property name="damping" value="0.0"/>
-  <xacro:property name="friction" value="0.0"/>
+  <xacro:property name="damping" value="1.0"/>
+  <xacro:property name="friction" value="1.0"/>
 
   <xacro:macro name="kuka_kr6r900sixx" params="prefix">
     <link name="${prefix}base_link">

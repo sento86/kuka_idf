@@ -32,12 +32,19 @@
 
     <!-- Load joints controllers configurations -->
     <rosparam file="$(find kuka_control)/config/simulation_controllers.yaml" command="load"/>
+    <!--<rosparam file="$(find kuka_control)/config/simulation_controllers_single_joint.yaml" command="load"/>-->
+    <!--<rosparam file="$(find kuka_control)/config/gravity_comp_control.yaml" command="load"/>-->
 
     <!-- Load the controllers -->
     <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="
         joint_state_controller
-        position_trajectory_controller">
+	position_trajectory_controller">
     </node>
+
+    <!--<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="
+        joint_state_controller
+        joint_a1_position_controller joint_a2_position_controller joint_a3_position_controller joint_a4_position_controller joint_a5_position_controller joint_a6_position_controller">
+    </node>-->
 <!--
     <include file="$(find timed_roslaunch)/launch/timed_roslaunch.launch">
        <arg name="time" value="2" />
