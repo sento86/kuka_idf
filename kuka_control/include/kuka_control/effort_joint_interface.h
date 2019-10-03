@@ -1,20 +1,11 @@
 #include "ros/ros.h"
-#include <kuka_control/Efforts.h>
-#include <realtime_tools/realtime_publisher.h>
-
 #include <kdl/jntarrayvel.hpp>
-#include <kdl/chainidsolver_recursive_newton_euler.hpp>
-
-#include <kdl/tree.hpp>
-#include <kdl/kdl.hpp>
-#include <kdl/chain.hpp>
-#include <kdl/chaindynparam.hpp>
+#include <kuka_control/Efforts.h>
 #include <kdl_parser/kdl_parser.hpp>
-
-
+#include <realtime_tools/realtime_publisher.h>
+#include <kdl/chainidsolver_recursive_newton_euler.hpp>
 #include <trajectory_interface/quintic_spline_segment.h>
 #include <joint_trajectory_controller/joint_trajectory_controller.h>
-
 #include <tf/transform_listener.h>
 #include <tf2_kdl/tf2_kdl.h>
 
@@ -58,32 +49,10 @@ public:
         }
         ROS_INFO("Parsed kdl tree from urdf model");
 
-	// kdl chain
-	std::string root_name, tip_name;
-	if (!nh.getParam("root_link", root_name))
-	{
-		ROS_ERROR("Could not find root link name");
-		return false;
-        }
-	if (!nh.getParam("tip_link", tip_name))
-	{
-		ROS_ERROR("Could not find tip link name");
-		return false;
-    	}
-
         // Extract chain from KDL tree.
         KDL::Chain chain;
-        if (!tree.getChain(root_name, tip_name, chain)) {
-            //ROS_ERROR("Failed to extract chain from 'base_link' to 'link_6' in kdl tree");
-	    ROS_ERROR_STREAM("Failed to get KDL chain from tree: ");
-	    ROS_ERROR_STREAM("  "<<root_name<<" --> "<<tip_name);
-	    ROS_ERROR_STREAM("  Tree has "<<tree.getNrOfJoints()<<" joints");
-	    ROS_ERROR_STREAM("  Tree has "<<tree.getNrOfSegments()<<" segments");
-	    ROS_ERROR_STREAM("  The segments are:");
-	    KDL::SegmentMap segment_map = tree.getSegments();
-            KDL::SegmentMap::iterator it;
-	    for( it=segment_map.begin(); it != segment_map.end(); it++ )
-              	ROS_ERROR_STREAM( "    "<<(*it).first);
+        if (!tree.getChain("base_link", "link_6", chain)) {
+            ROS_ERROR("Failed to extract chain from 'base_link' to 'link_6' in kdl tree");
             return false;
         }
         ROS_INFO("Extracted chain from kdl tree");
@@ -101,9 +70,6 @@ public:
         joints_effort_limits.resize(n_joints);
         (*joints_efforts).resize(n_joints);
         joints_state.resize(n_joints);
-
-	// command and state
-	q_.data = Eigen::VectorXd::Zero(n_joints_);
 
         for (unsigned int idx = 0; idx < chain.getNrOfJoints(); idx++) {
             // Get joint name.
@@ -129,14 +95,8 @@ public:
     	tf::Vector3 g(0, 0, -9.81);
     	g = tf::Matrix3x3(q)*g;
 
-
-	gravity_ = KDL::Vector::Zero();
-	gravity_(2) = -9.81;
-
         // Init inverse dynamics solver.
         id_solver.reset(new KDL::ChainIdSolver_RNE(chain, KDL::Vector(g.x(),g.y(),g.z())));
-        //id_solver.reset(new KDL::ChainDynParam(chain, KDL::Vector(g.x(),g.y(),g.z())));
-        //id_solver.reset(new KDL::ChainDynParam(chain, gravity_));
         ROS_INFO("Initialized kdl inverse dynamics solver");
 
         //************************************************
@@ -164,7 +124,7 @@ public:
 
         // Get number of PID controllers
         n_PIDs_ = xml_struct.size();
-        ROS_INFO_STREAM_NAMED("position", "Initializing KukaPositionController with " << n_PIDs_ << " PID controllers.");
+        ROS_INFO_STREAM_NAMED("position", "Initializing BaxterPositionController with " << n_PIDs_ << " PID controllers.");
 
         ROS_ERROR_STREAM(n_PIDs_);
 
@@ -252,8 +212,6 @@ public:
             joints_state.q.data[idx] = (*joint_handles_ptr)[idx].getPosition();
             joints_state.qdot.data[idx] = (*joint_handles_ptr)[idx].getVelocity();
 
-	    //q_(idx) = (*joint_handles_ptr)[idx].getPosition();
-
             // Compute outer loop control.
             // todo: dynamic reconfigure parameters.
             outer_loop_control.data[idx] = Kp[idx] * state_error.position[idx] + Kd[idx] * state_error.velocity[idx] + Ki[idx] * state_error_integral[idx];
@@ -265,15 +223,8 @@ public:
         // No external forces (except gravity).
         KDL::Wrenches external_forces(joint_handles_ptr->size());
 
-        ROS_ERROR("************************************");
-	ROS_ERROR_STREAM(joints_state.q.data);
-	ROS_ERROR_STREAM(joints_state.qdot.data);
-	ROS_ERROR_STREAM(outer_loop_control.data);
-	ROS_ERROR("forces: %d",external_forces.size());
-        ROS_ERROR("******************");
-
         // Solve inverse dynamics (inner loop control).
-        /*if (id_solver->CartToJnt(
+        if (id_solver->CartToJnt(
                 joints_state.q,
                 joints_state.qdot,
                 outer_loop_control,
@@ -281,23 +232,7 @@ public:
                 inner_loop_control) != 0) {
             ROS_ERROR("error solving inverse dynamics");
             return;
-        };*/
-        int aaa = id_solver->CartToJnt(
-            joints_state.q,
-            joints_state.qdot,
-            outer_loop_control,
-            external_forces,
-            inner_loop_control);
-        id_solver->strError( id_solver->getError() );
-        if (aaa != 0) {
-            ROS_ERROR("error %d solving inverse dynamics",aaa);
-            return;
         };
-
-        /*if (id_solver->JntToGravity(q_, inner_loop_control) != 0) {
-            ROS_ERROR("error solving inverse dynamics");
-            return;
-        };*/
 
         for (unsigned int idx = 0; idx < joint_handles_ptr->size(); ++idx) {
             (*joints_efforts)[idx] = inner_loop_control.data[idx];
@@ -329,7 +264,6 @@ private:
 
     // Inverse Dynamics Solver.
     boost::scoped_ptr<KDL::ChainIdSolver_RNE> id_solver;
-    //boost::scoped_ptr<KDL::ChainDynParam> id_solver;
 
     // Joints state.
     KDL::JntArrayVel joints_state;
@@ -342,9 +276,6 @@ private:
 
     // Joints efforts.
     std::vector<double> *joints_efforts;
-
-    KDL::Vector gravity_;	// gravity vector
-    KDL::JntArray q_, qdot_;
 
     //************************************************
 
