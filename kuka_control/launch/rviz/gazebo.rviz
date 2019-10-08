@@ -7,8 +7,8 @@ Panels:
         - /Global Options1
         - /Status1
         - /TF1/Tree1
-      Splitter Ratio: 0.5694444179534912
-    Tree Height: 779
+      Splitter Ratio: 0.569444418
+    Tree Height: 763
   - Class: rviz/Selection
     Name: Selection
   - Class: rviz/Tool Properties
@@ -17,7 +17,7 @@ Panels:
       - /2D Nav Goal1
       - /Publish Point1
     Name: Tool Properties
-    Splitter Ratio: 0.5886790156364441
+    Splitter Ratio: 0.588679016
   - Class: rviz/Views
     Expanded:
       - /Current View1
@@ -28,8 +28,6 @@ Panels:
     Name: Time
     SyncMode: 0
     SyncSource: Image3
-Preferences:
-  PromptSaveOnExit: true
 Toolbars:
   toolButtonStyle: 2
 Visualization Manager:
@@ -41,7 +39,7 @@ Visualization Manager:
       Color: 160; 160; 164
       Enabled: true
       Line Style:
-        Line Width: 0.029999999329447746
+        Line Width: 0.0299999993
         Value: Lines
       Name: Grid
       Normal Cell Count: 0
@@ -63,87 +61,6 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        axia80_ft_base:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        axia80_ft_measure:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        base:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        base_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        brida_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        camera_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        link_1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        link_2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        link_3:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        link_4:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        link_5:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        link_6:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        tool0:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        tool_axis:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        tool_base:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        tool_tip:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        world:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
       Name: GazeboKR6Model
       Robot Description: kr6/robot_description
       TF Prefix: kr6
@@ -221,41 +138,9 @@ Visualization Manager:
           Value: true
         cell_base:
           Value: true
+        cell_cam:
+          Value: true
         cell_link:
-          Value: true
-        kr6/axia80_ft_base:
-          Value: true
-        kr6/axia80_ft_measure:
-          Value: true
-        kr6/base:
-          Value: true
-        kr6/base_link:
-          Value: true
-        kr6/brida_link:
-          Value: true
-        kr6/camera_link:
-          Value: true
-        kr6/link_1:
-          Value: true
-        kr6/link_2:
-          Value: true
-        kr6/link_3:
-          Value: true
-        kr6/link_4:
-          Value: true
-        kr6/link_5:
-          Value: true
-        kr6/link_6:
-          Value: true
-        kr6/tool0:
-          Value: true
-        kr6/tool_axis:
-          Value: true
-        kr6/tool_base:
-          Value: true
-        kr6/tool_tip:
-          Value: true
-        kr6/world:
           Value: true
         mf1_base:
           Value: true
@@ -299,62 +184,43 @@ Visualization Manager:
           cell/world:
             cell_base:
               cell_link:
-                mf1_base:
-                  mf1_link1:
-                    mf1_link2:
-                      mf1_link3:
-                        mf1_frame:
-                          camera1_link:
-                            camera1_depth_frame:
-                              camera1_depth_optical_frame:
-                                {}
-                            camera1_rgb_frame:
-                              camera1_rgb_optical_frame:
-                                {}
-                mf2_base:
-                  mf2_link1:
-                    mf2_link2:
-                      mf2_link3:
-                        mf2_frame:
-                          camera2_link:
-                            camera2_depth_frame:
-                              camera2_depth_optical_frame:
-                                {}
-                            camera2_rgb_frame:
-                              camera2_rgb_optical_frame:
-                                {}
-                mf3_base:
-                  mf3_link1:
-                    mf3_link2:
-                      mf3_link3:
-                        mf3_frame:
-                          camera3_link:
-                            camera3_depth_frame:
-                              camera3_depth_optical_frame:
-                                {}
-                            camera3_rgb_frame:
-                              camera3_rgb_optical_frame:
-                                {}
-          kr6/world:
-            kr6/base_link:
-              kr6/base:
-                {}
-              kr6/link_1:
-                kr6/link_2:
-                  kr6/link_3:
-                    kr6/link_4:
-                      kr6/link_5:
-                        kr6/link_6:
-                          kr6/tool0:
-                            kr6/brida_link:
-                              kr6/axia80_ft_base:
-                                kr6/axia80_ft_measure:
-                                  kr6/tool_base:
-                                    kr6/tool_axis:
-                                      kr6/tool_tip:
-                                        {}
-                              kr6/camera_link:
-                                {}
+                cell_cam:
+                  mf1_base:
+                    mf1_link1:
+                      mf1_link2:
+                        mf1_link3:
+                          mf1_frame:
+                            camera1_link:
+                              camera1_depth_frame:
+                                camera1_depth_optical_frame:
+                                  {}
+                              camera1_rgb_frame:
+                                camera1_rgb_optical_frame:
+                                  {}
+                  mf2_base:
+                    mf2_link1:
+                      mf2_link2:
+                        mf2_link3:
+                          mf2_frame:
+                            camera2_link:
+                              camera2_depth_frame:
+                                camera2_depth_optical_frame:
+                                  {}
+                              camera2_rgb_frame:
+                                camera2_rgb_optical_frame:
+                                  {}
+                  mf3_base:
+                    mf3_link1:
+                      mf3_link2:
+                        mf3_link3:
+                          mf3_frame:
+                            camera3_link:
+                              camera3_depth_frame:
+                                camera3_depth_optical_frame:
+                                  {}
+                              camera3_rgb_frame:
+                                camera3_rgb_optical_frame:
+                                  {}
       Update Interval: 0
       Value: true
     - Acceleration_Scaling_Factor: 1
@@ -368,7 +234,6 @@ Visualization Manager:
       MoveIt_Goal_Tolerance: 0
       MoveIt_Planning_Attempts: 10
       MoveIt_Planning_Time: 5
-      MoveIt_Use_Cartesian_Path: false
       MoveIt_Use_Constraint_Aware_IK: true
       MoveIt_Warehouse_Host: 127.0.0.1
       MoveIt_Warehouse_Port: 33829
@@ -406,7 +271,7 @@ Visualization Manager:
         Show Manipulability: false
         Show Manipulability Index: false
         Show Weight Limit: false
-        TextHeight: 0.07999999821186066
+        TextHeight: 0.0799999982
       Planning Request:
         Colliding Link Color: 255; 0; 0
         Goal State Alpha: 1
@@ -422,9 +287,9 @@ Visualization Manager:
       Planning Scene Topic: move_group/monitored_planning_scene
       Robot Description: robot_description
       Scene Geometry:
-        Scene Alpha: 0.8999999761581421
+        Scene Alpha: 0.899999976
         Scene Color: 50; 230; 50
-        Scene Display Time: 0.20000000298023224
+        Scene Display Time: 0.200000003
         Show Scene Geometry: true
         Voxel Coloring: Z-Axis
         Voxel Rendering: Occupied Voxels
@@ -441,7 +306,7 @@ Visualization Manager:
         Show Robot Visual: true
       Value: false
       Velocity_Scaling_Factor: 1
-    - Alpha: 0.30000001192092896
+    - Alpha: 0.300000012
       Class: rviz/RobotModel
       Collision Enabled: false
       Enabled: true
@@ -523,6 +388,10 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        cell_cam:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
         cell_link:
           Alpha: 1
           Show Axes: false
@@ -628,9 +497,9 @@ Visualization Manager:
       Queue Size: 0
       Selectable: true
       Size (Pixels): 3
-      Size (m): 0.004999999888241291
+      Size (m): 0.00499999989
       Style: Flat Squares
-      Topic: /camera1/depth/points
+      Topic: /camera1/depth_registered/points
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
@@ -658,9 +527,9 @@ Visualization Manager:
       Queue Size: 0
       Selectable: true
       Size (Pixels): 3
-      Size (m): 0.004999999888241291
+      Size (m): 0.00499999989
       Style: Flat Squares
-      Topic: /camera2/depth/points
+      Topic: /camera2/depth_registered/points
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
@@ -688,9 +557,9 @@ Visualization Manager:
       Queue Size: 0
       Selectable: true
       Size (Pixels): 3
-      Size (m): 0.004999999888241291
+      Size (m): 0.00499999989
       Style: Flat Squares
-      Topic: /camera3/depth/points
+      Topic: /camera3/depth_registered/points
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
@@ -718,7 +587,7 @@ Visualization Manager:
       Queue Size: 0
       Selectable: true
       Size (Pixels): 3
-      Size (m): 0.004999999888241291
+      Size (m): 0.00499999989
       Style: Flat Squares
       Topic: /camera4/depth_registered/points
       Unreliable: false
@@ -785,7 +654,7 @@ Visualization Manager:
       Color: 255; 255; 255
       Color Transformer: Intensity
       Decay Time: 0
-      Enabled: false
+      Enabled: true
       Invert Rainbow: false
       Max Color: 255; 255; 255
       Max Intensity: 4096
@@ -796,13 +665,13 @@ Visualization Manager:
       Queue Size: 10
       Selectable: true
       Size (Pixels): 3
-      Size (m): 0.009999999776482582
+      Size (m): 0.00999999978
       Style: Flat Squares
       Topic: /output1
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
-      Value: false
+      Value: true
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
@@ -812,10 +681,10 @@ Visualization Manager:
       Axis: Z
       Channel Name: intensity
       Class: rviz/PointCloud2
-      Color: 255; 255; 255
-      Color Transformer: Intensity
+      Color: 255; 0; 0
+      Color Transformer: FlatColor
       Decay Time: 0
-      Enabled: false
+      Enabled: true
       Invert Rainbow: false
       Max Color: 255; 255; 255
       Max Intensity: 4096
@@ -826,13 +695,13 @@ Visualization Manager:
       Queue Size: 10
       Selectable: true
       Size (Pixels): 3
-      Size (m): 0.009999999776482582
+      Size (m): 0.00999999978
       Style: Flat Squares
-      Topic: /output_merged
+      Topic: /output_merged_2
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
-      Value: false
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -848,10 +717,7 @@ Visualization Manager:
     - Class: rviz/FocusCamera
     - Class: rviz/Measure
     - Class: rviz/SetInitialPose
-      Theta std deviation: 0.2617993950843811
       Topic: /initialpose
-      X std deviation: 0.5
-      Y std deviation: 0.5
     - Class: rviz/SetGoal
       Topic: /move_base_simple/goal
     - Class: rviz/PublishPoint
@@ -861,25 +727,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 3.4846696853637695
+      Distance: 3.48466969
       Enable Stereo Rendering:
-        Stereo Eye Separation: 0.05999999865889549
+        Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.018609434366226196
-        Y: -0.14116808772087097
-        Z: 0.8635135293006897
+        X: 0.0186094344
+        Y: -0.141168088
+        Z: 0.863513529
       Focal Shape Fixed Size: true
-      Focal Shape Size: 0.05000000074505806
+      Focal Shape Size: 0.0500000007
       Invert Z Axis: false
       Name: Current View
-      Near Clip Distance: 0.009999999776482582
-      Pitch: 0.3453981578350067
+      Near Clip Distance: 0.00999999978
+      Pitch: 0.345398158
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 2.486788749694824
+      Yaw: 2.48678875
     Saved: ~
 Window Geometry:
   Displays:
@@ -899,7 +765,7 @@ Window Geometry:
     collapsed: false
   MotionPlanning - Trajectory Slider:
     collapsed: false
-  QMainWindow State: 000000ff00000000fd00000004000000000000016a000003d3fc020000000bfb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c0061007900730100000014000003d3000000c700fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb000000120020002d00200053006c00690064006500720000000000ffffffff0000000000000000fb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e0067000000022a000001be0000018300fffffffb00000044004d006f00740069006f006e0050006c0061006e006e0069006e00670020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000003f00ffffff0000000100000198000003d3fc0200000008fb0000000c0049006d00610067006500310100000014000001430000001600fffffffb0000000c0049006d0061006700650032010000015d000001420000001600fffffffb0000000c0049006d006100670065003301000002a5000001420000001600fffffffb0000000c0049006d006100670065003400000002fa000000ef0000001600fffffffb0000000c00430061006d006500720061000000001b000003ce0000000000000000fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000000000000402000000a000fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e100000197000000030000073f0000003efc0100000002fb0000000800540069006d006500000000000000073f0000024400fffffffb0000000800540069006d0065010000000000000450000000000000000000000470000003d300000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730000000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd00000004000000000000016a000003c9fc020000000bfb0000001200530065006c0065006300740069006f006e00000001e10000009b0000006700fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000001b000003c9000000e300fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb000000120020002d00200053006c00690064006500720000000000ffffffff0000000000000000fb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e0067000000022a000001be0000018400fffffffb00000044004d006f00740069006f006e0050006c0061006e006e0069006e00670020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000004300ffffff0000000100000198000003c9fc0200000008fb0000000c0049006d0061006700650031010000001b000001400000001600fffffffb0000000c0049006d006100670065003201000001610000013e0000001600fffffffb0000000c0049006d006100670065003301000002a50000013f0000001600fffffffb0000000c0049006d006100670065003400000002fa000000ef0000001600fffffffb0000000c00430061006d006500720061000000001b000003ce0000000000000000fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000000000000402000000b300fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e100000197000000030000073f0000003efc0100000002fb0000000800540069006d006500000000000000073f0000022300fffffffb0000000800540069006d0065010000000000000450000000000000000000000470000003c900000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730000000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Time:

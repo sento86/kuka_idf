@@ -13,19 +13,19 @@
  <!--  Manfrotto 1 (mf1) -->
   <!--<xacro:manfrotto name="mf1" parent="cell_link" r1="${M_PI-24.0*M_PI/180.0}" r2="${-31.5*M_PI/180.0}" r3="${(27.1-13.5)*M_PI/180.0}"> -->
     <xacro:manfrotto name="mf1" parent="cell_cam" r1="${M_PI-24.0*M_PI/180.0}" r2="${-31.5*M_PI/180.0}" r3="${(27.1-13.5)*M_PI/180.0}"> 
-    <origin xyz="0.95 ${-1.01-0.02} ${1.015-0.02}" rpy="0 ${90.0*M_PI/180.0} ${M_PI}" />
+    <origin xyz="0.95 ${-1.01+0.02} ${1.015}" rpy="0 ${90.0*M_PI/180.0} ${M_PI}" />
   </xacro:manfrotto>
 
  <!--  Manfrotto 2 (mf2) 19.3-->
   <!--<xacro:manfrotto name="mf2" parent="cell_link" r1="${(9.5-0.2)*M_PI/180.0+M_PI}" r2="${(34.5-1.0)*M_PI/180.0}" r3="${(39.5-18.0)*M_PI/180.0}">-->
     <xacro:manfrotto name="mf2" parent="cell_cam" r1="${(9.5-0.2)*M_PI/180.0+M_PI}" r2="${(34.5-1.0)*M_PI/180.0}" r3="${(39.5-18.0)*M_PI/180.0}">
-    <origin xyz="-0.95 ${-1.01+0.02-0.02} ${1.015-0.015-0.02}" rpy="0 ${90.0*M_PI/180.0} 0" />
+    <origin xyz="-0.95 ${-1.01+0.02} ${1.015}" rpy="0 ${90.0*M_PI/180.0} 0" />
   </xacro:manfrotto>
 
  <!--  Manfrotto 3 (mf3) -->
   <!--<xacro:manfrotto name="mf3" parent="cell_link" r1="${43.3*M_PI/180.0+45.0*M_PI/180.0}" r2="${0.0*M_PI/180.0}" r3="${(42.5+17.2)*M_PI/180.0}">-->
     <xacro:manfrotto name="mf3" parent="cell_cam" r1="${43.3*M_PI/180.0+45.0*M_PI/180.0}" r2="${0.0*M_PI/180.0}" r3="${(42.5+17.2)*M_PI/180.0}">
-    <origin xyz="-0.015 ${1.02-0.02} ${1.295-0.02}" rpy="${180.0*M_PI/180.0} 0 ${180.0*M_PI/180.0}" />
+    <origin xyz="-0.015 ${1.02+0.02} ${1.295}" rpy="${180.0*M_PI/180.0} 0 ${180.0*M_PI/180.0}" />
   </xacro:manfrotto>
 
  <!--  Kinect sensors -->

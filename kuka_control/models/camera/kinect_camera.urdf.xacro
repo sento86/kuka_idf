@@ -71,7 +71,7 @@
 
       <!-- Kinect camera for simulation -->
       <xacro:if value="${gazebo}">
-      <gazebo reference="${name}_depth_frame">
+      <gazebo reference="${name}_rgb_frame">
         <sensor type="depth" name="${name}">
           <update_rate>10</update_rate>
           <camera>
@@ -93,11 +93,11 @@
           <plugin name="${name}_camera_controller" filename="libgazebo_ros_openni_kinect.so">
             <imageTopicName>${name}/rgb/image_raw</imageTopicName>
             <cameraInfoTopicName>${name}/rgb/camera_info</cameraInfoTopicName>
-            <depthImageTopicName>${name}/depth/image_raw</depthImageTopicName>
-            <depthImageCameraInfoTopicName>${name}/depth/camera_info</depthImageCameraInfoTopicName>
-            <pointCloudTopicName>${name}/depth/points</pointCloudTopicName>
+            <depthImageTopicName>${name}/depth_registered/image_raw</depthImageTopicName>
+            <depthImageCameraInfoTopicName>${name}/depth_registered/camera_info</depthImageCameraInfoTopicName>
+            <pointCloudTopicName>${name}/depth_registered/points</pointCloudTopicName>
             <!--<frameName>/cell/${name}_depth_optical_frame</frameName>-->
-            <frameName>${name}_depth_optical_frame</frameName>
+            <frameName>${name}_rgb_optical_frame</frameName>
           </plugin>
         </sensor>
       </gazebo>

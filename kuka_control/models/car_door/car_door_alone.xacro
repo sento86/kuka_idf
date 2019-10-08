@@ -10,7 +10,7 @@
       <visual name="visual">
         <geometry>
           <!--<mesh filename="package://kuka_control/models/car_door/meshes/car_door.dae"/>-->
-          <mesh filename="package://kuka_control/models/car_door/meshes/VITO_puerta_izq.dae"/>
+          <mesh filename="package://kuka_control/models/car_door/meshes/car_VITO.dae"/>
         </geometry>
         <!--
         <material name="red">
@@ -21,7 +21,7 @@
       <collision name="collision">
         <geometry>
           <!--<mesh filename="package://kuka_control/models/car_door/meshes/car_door.dae"/>-->
-          <mesh filename="package://kuka_control/models/car_door/meshes/VITO_puerta_izq.dae"/>
+          <mesh filename="package://kuka_control/models/car_door/meshes/car_VITO.dae"/>
         </geometry>
       </collision>
   </link>
