@@ -10,3 +10,4 @@ Tools developed in the Automatizacion Industrial y Robotica (AIR) labotaroty of 
 ### Load robotic cell model with transforms to 3 depth cameras frames
 
     roslaunch kuka_control demo_cell.launch gazebo:=false
+    rosbag play name.bag (where name is the file name)
